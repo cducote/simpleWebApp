@@ -22,9 +22,17 @@ componentDidMount() {
 }
 
     render() {
+        let people = this.state.people
+        const peopleNames = people.map((person, i) => {
+            return (
+                <div key={i}>{person.display_name}</div>
+            )
+        }
+        )
+
         return (
             <div>
-                hello
+                {peopleNames}
             </div>
         );
     }
