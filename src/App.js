@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import People from './components/People'
+import FrequencyCount from './components/FrequencyCount';
 
 class App extends Component {
   state = {
@@ -13,7 +14,10 @@ class App extends Component {
     const buttonClicked = this.state.buttonClicked
     let displayPage
     if (buttonClicked) {
-      displayPage = <div>button was clicked</div>
+      displayPage = <div>
+                      button was clicked
+                    <FrequencyCount/>
+                    </div>
     } else {
       displayPage = <People/>
     }
