@@ -25,7 +25,7 @@ componentDidMount() {
         let people = this.state.people
         const peopleNames = people.map((person, i) => {
             return (
-                <div key={i}>{person.display_name}</div>
+                <div key={i}>{person.display_name} - {person.title} - {person.email_address}</div>
             )
         }
         )
