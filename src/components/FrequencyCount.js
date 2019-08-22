@@ -16,13 +16,21 @@ componentDidMount = async () => {
     this.getEmails(people)
 }
 
+splitChars = (emailArray) => {
+    const newCharArray = emailArray.map((singleEmail) => {
+        return (singleEmail.split(''))
+    })
+    const allChars = newCharArray.flat()
+    console.log(newCharArray)
+}
+
 getEmails = (people) => {
     let emailArray = []
     people.forEach((person)=> {
         const singleEmail = person.email_address
         emailArray.push(singleEmail)
     })
-    console.log(emailArray)
+    this.splitChars(emailArray)
 }
     render() {
 
