@@ -16,12 +16,20 @@ componentDidMount = async () => {
     this.getEmails(people)
 }
 
+charCounter = (allChars) => {
+    const charSorter = allChars.reduce((allChars, char) => {
+        if (char in allChars) { allChars[char]++ } else { allChars[char] = 1 }
+        return allChars
+    }, [])
+    console.log(charSorter)
+}
+
 splitChars = (emailArray) => {
     const newCharArray = emailArray.map((singleEmail) => {
         return (singleEmail.split(''))
     })
     const allChars = newCharArray.flat()
-    console.log(newCharArray)
+    this.charCounter(allChars)
 }
 
 getEmails = (people) => {
