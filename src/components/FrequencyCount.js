@@ -3,7 +3,7 @@ import axios from 'axios';
 
 class FrequencyCount extends Component {
     state = {
-       
+       frequency: {}
     }
 componentDidMount = async () => {
     const API_KEY = process.env.REACT_APP_API_KEY
@@ -20,7 +20,8 @@ charCounter = (allChars) => {
     const charSorter = allChars.reduce((allChars, char) => {
         if (char in allChars) { allChars[char]++ } else { allChars[char] = 1 }
         return allChars
-    }, [])
+    }, {})
+    this.setState({ frequency: charSorter })
     console.log(charSorter)
 }
 
@@ -40,11 +41,19 @@ getEmails = (people) => {
     })
     this.splitChars(emailArray)
 }
+
     render() {
+        const frequencies = Object.keys(this.state.frequency).map((char, i) => {
+            return (
+                <div key={i}>
+                    {char}
+                </div>
+            )
+        })
 
         return (
             <div>
-                
+                {frequencies}
             </div>
         );
     }

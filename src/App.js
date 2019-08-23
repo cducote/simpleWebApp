@@ -14,10 +14,7 @@ class App extends Component {
     const buttonClicked = this.state.buttonClicked
     let displayPage
     if (buttonClicked) {
-      displayPage = <div>
-                      button was clicked
-                    <FrequencyCount/>
-                    </div>
+      displayPage = <FrequencyCount/>
     } else {
       displayPage = <People/>
     }
