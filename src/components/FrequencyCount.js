@@ -21,8 +21,7 @@ charCounter = (allChars) => {
         if (char in allChars) { allChars[char]++ } else { allChars[char] = 1 }
         return allChars
     }, {})
-    this.setState({ frequency: charSorter })
-    console.log(charSorter)
+    console.log(charSorter.data)
 }
 
 splitChars = (emailArray) => {
