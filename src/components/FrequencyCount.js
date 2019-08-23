@@ -15,13 +15,26 @@ componentDidMount = async () => {
     const people = response.data.data
     this.getEmails(people)
 }
+charSorter = (charSorterArray) => {
+    let charCounter = charSorterArray
+    let sortable = []
+    for (var char in charCounter) {
+        sortable.push([char, charCounter[char]])
+    }
+    sortable.sort(function(a,b) {
+        return a[1] - b[1]
+    })
+    console.log(sortable)
+}
+
 
 charCounter = (allChars) => {
-    const charSorter = allChars.reduce((allChars, char) => {
+    const charSorterArray = allChars.reduce((allChars, char) => {
         if (char in allChars) { allChars[char]++ } else { allChars[char] = 1 }
         return allChars
     }, {})
-    console.log(charSorter.data)
+    // console.log(charSorterArray)
+    this.charSorter(charSorterArray)
 }
 
 splitChars = (emailArray) => {
