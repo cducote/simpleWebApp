@@ -3,8 +3,9 @@ import axios from 'axios';
 
 class FrequencyCount extends Component {
     state = {
-       frequency: {}
+       frequency: []
     }
+    
 componentDidMount = async () => {
     const API_KEY = process.env.REACT_APP_API_KEY
     const response = await axios.get('https://cors-anywhere.herokuapp.com/https://api.salesloft.com/v2/people.json', {
@@ -25,6 +26,8 @@ charSorter = (charSorterArray) => {
         return a[1] - b[1]
     })
     console.log(sortable)
+    sortable.reverse()
+    this.setState({ frequency: sortable })
 }
 
 
@@ -32,7 +35,7 @@ charCounter = (allChars) => {
     const charSorterArray = allChars.reduce((allChars, char) => {
         if (char in allChars) { allChars[char]++ } else { allChars[char] = 1 }
         return allChars
-    }, {})
+    }, [])
     // console.log(charSorterArray)
     this.charSorter(charSorterArray)
 }
@@ -55,10 +58,11 @@ getEmails = (people) => {
 }
 
     render() {
-        const frequencies = Object.keys(this.state.frequency).map((char, i) => {
+        const fArray = this.state.frequency
+        const frequencies = fArray.map((char, i) => {
             return (
                 <div key={i}>
-                    {char}
+                   {char[0]} - {char[1]}
                 </div>
             )
         })
