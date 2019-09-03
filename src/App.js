@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <div>
         {displayPage}
-        <button onClick={this.handleClick}>Click me for thing</button>
+        <button onClick={this.handleClick}>Click me to do the thing</button>
       </div>
     );
   }
