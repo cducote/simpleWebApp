@@ -10,9 +10,12 @@
  * Organize information in labeled tables
  * Testing
 
-In the project directory, you can run: `npm i` to install dependancies 
 
-### `npm start`
+### Running locally if live is down
 
+After cloning this repo
+cd into the directroy
+In the project directory, run: `npm i` to install dependancies 
+`npm start`
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
