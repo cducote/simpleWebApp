@@ -8,7 +8,7 @@ class People extends Component {
 
 getPeople = async () => {
     const API_KEY = process.env.REACT_APP_API_KEY
-    const peopleResponse = await axios.get('https://api.salesloft.com/v2/people.json', {
+    const peopleResponse = await axios.get('https://cors-anywhere.herokuapp.com/https://api.salesloft.com/v2/people.json', {
         headers: {
             Authorization: 'Bearer ' + API_KEY
         }

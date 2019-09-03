@@ -1,10 +1,18 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+## Simple web app
 
 ### Link
-[link]https://master.d1z9sd6to980dw.amplifyapp.com/
+[Click here to go to cloud deployment](https://master.d1z9sd6to980dw.amplifyapp.com/)
+
 
 ### To-Do
+ * Overcome CORS policy
  * Beautify web app
  * Organize information in labeled tables
  * Testing
+
+In the project directory, you can run: `npm i` to install dependancies 
+
+### `npm start`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
